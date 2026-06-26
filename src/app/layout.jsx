@@ -28,27 +28,24 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
 
-        {/* Shared container wrapper */}
-        <div className="max-w-7xl mx-auto w-full flex flex-col min-h-screen">
+        <AuthProvider>
 
-          {/* Navbar */}
-          <header>
-            <Navbar />
-          </header>
+          <div className="max-w-7xl mx-auto w-full flex flex-col min-h-screen">
 
-          {/* Main Content */}
-          <main className="flex-1">
-            <AuthProvider>
+            <header>
+              <Navbar />
+            </header>
+
+            <main className="flex-1">
               {children}
-            </AuthProvider>
-          </main>
+            </main>
 
-          {/* Footer */}
-          <Footer />
+            <Footer />
 
-        </div>
+          </div>
 
-        {/* Toast */}
+        </AuthProvider>
+
         <Toaster position="top-right" />
 
       </body>
