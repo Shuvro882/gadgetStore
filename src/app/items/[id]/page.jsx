@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import itemsData from "@/data/itemsData";
 import Link from "next/link";
+import PrivateRoute from "@/components/shared/PrivateRoute";
 
 export default function ItemDetailsPage() {
   const { id } = useParams();
@@ -21,7 +22,8 @@ export default function ItemDetailsPage() {
   }
 
   return (
-    <section className="py-10">
+    <PrivateRoute>
+      <section className="py-10">
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Back button */}
@@ -69,5 +71,6 @@ export default function ItemDetailsPage() {
 
       </div>
     </section>
+    </PrivateRoute>
   );
 }
